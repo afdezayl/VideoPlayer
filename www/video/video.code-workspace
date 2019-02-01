@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "C:\\UwAmp\\screens\\video"
+		},
+		{
+			"path": "C:\\UwAmp\\seguridad\\video"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "video"
+	}
+}
