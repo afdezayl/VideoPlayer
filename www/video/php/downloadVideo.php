@@ -38,6 +38,7 @@
         return $DB->getVideoInfo($codigo);
     }
 
+    //TODO: ZipArchive
     function sendFile($video)
     {
         $name = $video['titulo'].'.mp4';

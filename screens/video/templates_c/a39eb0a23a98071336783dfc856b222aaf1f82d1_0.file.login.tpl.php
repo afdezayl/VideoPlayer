@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-02-01 18:36:28
+/* Smarty version 3.1.33, created on 2019-02-04 08:01:10
   from 'C:\UwAmp\screens\video\templates\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5c5491ac8ae824_37046635',
+  'unifunc' => 'content_5c57f1466caf67_28038249',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a39eb0a23a98071336783dfc856b222aaf1f82d1' => 
     array (
       0 => 'C:\\UwAmp\\screens\\video\\templates\\login.tpl',
-      1 => 1549046186,
+      1 => 1549267267,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5c5491ac8ae824_37046635 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c57f1466caf67_28038249 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="es-ES">
 
@@ -36,7 +36,9 @@ function content_5c5491ac8ae824_37046635 (Smarty_Internal_Template $_smarty_tpl)
 
 <body>
     <header>
-        <h1>Plataforma streaming</h1>
+        <h1>
+            <a href="videos.php">PHPFlix</a>
+        </h1>
     </header>
 
     <main>       

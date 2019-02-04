@@ -1,6 +1,6 @@
 :root {    
-    --darkPrimaryColor: #303F9F;
-    --primaryColor: #3F51B5;
+    --darkPrimaryColor: #000;/* #303F9F; */
+    --primaryColor: #212121;/* #3F51B5; */
     --primaryColorLight: #C5CAE9;
     --primaryColorText: #FFFFFF;
     --accentColor: #FF9800;
@@ -68,6 +68,8 @@ body {
     width: 100%;
     max-width: 1920px;
     margin: auto;
+
+    background: rgba(0,0,0,0.8);
 }
 
 header {
@@ -90,6 +92,7 @@ header h1 a{
 
 main {
     min-height: 90vh;
+    
 }
 
 footer {
@@ -102,14 +105,14 @@ footer {
     PELÍCULAS
 --------------------------------------------*/
 main div h2{
-    margin-top: 1rem;
-    border-top: 5px solid var(--darkPrimaryColor);
+    margin: 1rem;
+    /* border-top: 5px solid var(--darkPrimaryColor); */
 
     color: var(--primaryColorText);
-    background: var(--primaryColor);
+    /* background: var(--primaryColor); */
 }
 main .movies {
-    padding: 0 2.5%;
+    padding: 0 2rem;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     align-items: center;    
@@ -376,6 +379,12 @@ div input:focus {
     }
 }
 
+@media only screen and (max-width: 780px) {    
+    main .movies {        
+        grid-template-columns: repeat(3, 1fr);        
+    }
+}
+
 @media only screen and (max-width: 600px) {
     .login {
         width: 99%;
@@ -383,7 +392,8 @@ div input:focus {
     }
 
     main .movies {        
-        grid-template-columns: repeat(3, 1fr);        
+        grid-template-columns: repeat(3, 1fr); 
+        padding: 0 0;       
     }
 
     .modal-content {

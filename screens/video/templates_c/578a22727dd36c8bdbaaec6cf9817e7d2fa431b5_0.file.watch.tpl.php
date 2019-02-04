@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-02-01 19:00:58
+/* Smarty version 3.1.33, created on 2019-02-04 08:27:32
   from 'C:\UwAmp\screens\video\templates\watch.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5c54976a6cf6e0_98579815',
+  'unifunc' => 'content_5c57f7742948c9_38750818',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '578a22727dd36c8bdbaaec6cf9817e7d2fa431b5' => 
     array (
       0 => 'C:\\UwAmp\\screens\\video\\templates\\watch.tpl',
-      1 => 1549047655,
+      1 => 1549268846,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_5c54976a6cf6e0_98579815 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c57f7742948c9_38750818 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="es-ES">
 
@@ -37,7 +37,7 @@ function content_5c54976a6cf6e0_98579815 (Smarty_Internal_Template $_smarty_tpl)
     
     <?php echo '<script'; ?>
  src="./js/watch.js" defer><?php echo '</script'; ?>
->
+>    
 </head>
 
 <body>    
@@ -49,7 +49,7 @@ function content_5c54976a6cf6e0_98579815 (Smarty_Internal_Template $_smarty_tpl)
 </h2>
         <div class="videoWrapper">
             <video src="<?php echo $_smarty_tpl->tpl_vars['urlVideo']->value;?>
-" class="videoPlayer" type="video/mp4" controls="controls" preload="none"></video>
+" class="videoPlayer" type="video/mp4" controls="controls" controlsList="nodownload nofullscreen" oncontextmenu="return false;"></video>
         </div>
         
         <section class="description">            

@@ -28,8 +28,10 @@
             'urlVideo'=> $urlVideo
         ]);
 
+    //echo var_dump($video);
     $screen->display('watch.tpl');
 
+    //TODO: marcar como vista        
 
     function getCodigo()
     {
@@ -55,9 +57,13 @@
             exit;
         }
     
-        return $DB->getVideoInfo($codigo);
+        $video = $DB->getVideoInfo($codigo);
+        $video['categories'] = $DB->getVideoCategories($codigo);
+
+        return $video;
     }
 
+    //TODO: Cambios en la clase cripto
     function makeUrlToken($codigo)
     {
         $rand = bin2hex(openssl_random_pseudo_bytes(20));

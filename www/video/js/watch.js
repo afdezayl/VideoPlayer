@@ -19,6 +19,21 @@ function downloadFile(ev) {
 
     const url = "./php/downloadVideo.php";
 
+    // const xhr = new XMLHttpRequest();
+    // xhr.withCredentials = true;
+
+    // xhr.open('POST', url);
+
+    // xhr.addEventListener('progress', (ev) => {
+    //     console.log(ev);
+    // });
+
+    // xhr.addEventListener('load', (ev) => {
+    //     console.log(ev);
+    // });
+
+    // xhr.send(data);
+
     let fileName = "";
     fetch(url, init)
         .then(data => {            

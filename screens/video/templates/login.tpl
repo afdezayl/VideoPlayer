@@ -13,7 +13,9 @@
 
 <body>
     <header>
-        <h1>Plataforma streaming</h1>
+        <h1>
+            <a href="videos.php">PHPFlix</a>
+        </h1>
     </header>
 
     <main>       

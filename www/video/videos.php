@@ -19,11 +19,14 @@
     $DB = new VideoDB();
     $videos = $DB->getUserVideos($dni);
 
-    //Añade un string con las categorías de cada película
+    //Añade un string con las categorías de cada película y si ha sido vista
     foreach ($videos as &$video) {
-        $categories = $DB->getVideoCategories($video['codigo']);        
+        $categories = $DB->getVideoCategories($video['codigo']);
+        $viewCount = $DB->viewCount($dni, $video['codigo']);
+
         $strCategories = implode(' ', $categories);
         $video['category'] = $strCategories;
+        $video['viewCount'] = $viewCount;
     }
 
     //echo var_dump($videos);

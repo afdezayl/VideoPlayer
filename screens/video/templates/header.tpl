@@ -1,6 +1,6 @@
 <header>
     <h1>
-        <a href="videos.php">Plataforma streaming</a>
+        <a href="videos.php">PHPFlix</a>
     </h1>
     
     <a href="closeSession.php" class="btn_icon" aria-label="logout">

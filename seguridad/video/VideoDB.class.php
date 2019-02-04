@@ -36,13 +36,13 @@ class VideoDB
                     FROM USUARIOS
                     WHERE dni=?";
         
-        $consultaPreparada = $conexion->prepare($consultaSql);
-        $consultaPreparada->bind_param('s', $dni);
+        $stmt = $conexion->prepare($consultaSql);
+        $stmt->bind_param('s', $dni);
 
-        $consultaPreparada->execute();
+        $stmt->execute();
 
-        $consultaPreparada->bind_result($clave);
-        $consultaPreparada->fetch();
+        $stmt->bind_result($clave);
+        $stmt->fetch();
 
         return $clave;
     }
@@ -61,11 +61,11 @@ class VideoDB
                     ORDER BY titulo
                     ";
 
-        $consultaPreparada = $conexion->prepare($consultaSql);
-        $consultaPreparada->bind_param('s', $dni);
+        $stmt = $conexion->prepare($consultaSql);
+        $stmt->bind_param('s', $dni);
 
-        $consultaPreparada->execute();
-        $resultado = $consultaPreparada->get_result();
+        $stmt->execute();
+        $resultado = $stmt->get_result();
 
         $videos = array();
         
@@ -86,16 +86,16 @@ class VideoDB
                         and codigo_tematica=codigo"
                     ;
         
-        $consultaPreparada = $conexion->prepare($consultaSql);
+        $stmt = $conexion->prepare($consultaSql);
         
-        $consultaPreparada->bind_param('s', $codigo);
-        $consultaPreparada->bind_result($cat);
+        $stmt->bind_param('s', $codigo);
+        $stmt->bind_result($cat);
 
-        $consultaPreparada->execute();        
+        $stmt->execute();        
 
         $categories = array();
 
-        while($consultaPreparada->fetch()) {
+        while($stmt->fetch()) {
             array_push($categories, $cat);
         }
 
@@ -110,11 +110,11 @@ class VideoDB
                     FROM PERFIL_USUARIO
                     WHERE dni=?";
 
-        $consultaPreparada = $conexion->prepare($consultaSql);
-        $consultaPreparada->bind_param('s', $dni);
+        $stmt = $conexion->prepare($consultaSql);
+        $stmt->bind_param('s', $dni);
 
-        $consultaPreparada->execute();
-        $resultado = $consultaPreparada->get_result();
+        $stmt->execute();
+        $resultado = $stmt->get_result();
 
         $profiles = array();
         
@@ -168,5 +168,24 @@ class VideoDB
         $video = $result->fetch_assoc();
 
         return $video;
+    }
+
+    public function viewCount($dni, $codigo) {
+        $conexion = $this->CONEXION;
+
+        $sql = 'SELECT count(*)
+            FROM visionado
+            WHERE dni=?
+                and codigo_video=?';
+
+        $stmt = $conexion->prepare($sql);
+        $stmt->bind_param('ss', $dni, $codigo);
+        $stmt->bind_result($count);
+
+        $stmt->execute();
+
+        $stmt->fetch();
+
+        return $count;
     }
 }

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/materialdesignicons.min.css">
     
-    <script src="./js/watch.js" defer></script>
+    <script src="./js/watch.js" defer></script>    
 </head>
 
 <body>    
@@ -20,7 +20,7 @@
     <main>
         <h2>{$video.titulo}</h2>
         <div class="videoWrapper">
-            <video src="{$urlVideo}" class="videoPlayer" type="video/mp4" controls="controls" preload="none"></video>
+            <video src="{$urlVideo}" class="videoPlayer" type="video/mp4" controls="controls" controlsList="nodownload nofullscreen" oncontextmenu="return false;"></video>
         </div>
         
         <section class="description">            
