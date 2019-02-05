@@ -29,9 +29,7 @@
         ]);
 
     //echo var_dump($video);
-    $screen->display('watch.tpl');
-
-    //TODO: marcar como vista        
+    $screen->display('watch.tpl');         
 
     function getCodigo()
     {

@@ -20,7 +20,7 @@
     <main>
         <h2>{$video.titulo}</h2>
         <div class="videoWrapper">
-            <video src="{$urlVideo}" class="videoPlayer" type="video/mp4" controls="controls" controlsList="nodownload nofullscreen" oncontextmenu="return false;"></video>
+            <video src="{$urlVideo}" class="videoPlayer" poster="./img/{$video.cartel}" type="video/mp4" preload="none" controls="controls" controlsList="nodownload" oncontextmenu="return false;"></video>
         </div>
         
         <section class="description">            

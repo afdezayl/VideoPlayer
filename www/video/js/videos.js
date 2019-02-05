@@ -9,7 +9,9 @@ movies.forEach(movie => {
     movieCategories.forEach(cat => cat ? categories.add(cat) : null);
 });
 
-movies.forEach(m => m.addEventListener('click', goToVideo));
+document
+    .querySelectorAll('.movieInfo button')
+    .forEach(m => m.addEventListener('click', goToVideo));
 
 function goToVideo(ev) {
     const id = ev.target.getAttribute('data-id');
@@ -32,14 +34,14 @@ function goToVideo(ev) {
 function showByCategory() {
     categories.forEach(showSection);
     document
-        .querySelector('.general')
+        .querySelector('.GENERAL')
         .style.display = 'none';
 }
 
 function showSection(cat) {
     const html =
         `
-        <div class="${cat}">
+        <div class="${cat} category">
             <h2>${cat}</h2>
             <section class="movies">
                 ${moviesByCat(cat)}
@@ -71,13 +73,13 @@ function moviesByCat(cat) {
     return html;
 }
 
-function showAll() {
-    [...document.querySelectorAll('main div')]
-        .filter(section => !section.classList.contains('general'))
+function showAll() {    
+    [...document.querySelectorAll('main>div.category')]
+        .filter(section => !section.classList.contains('GENERAL'))
         .forEach(el => document.querySelector('main').removeChild(el));
 
     document
-        .querySelector('.general')
+        .querySelector('.GENERAL')
         .style.display = 'block';
 
     btnCategory.innerText = 'Mostrar por categoría';

@@ -188,4 +188,16 @@ class VideoDB
 
         return $count;
     }
+
+    public function saveUserView($dni, $codigo) {
+        $conexion = $this->CONEXION;
+
+        $sql = "INSERT INTO VISIONADO (dni, codigo_video)
+            VALUES (?, ?)";
+        
+        $stmt = $conexion->prepare($sql);
+        $stmt->bind_param('ss', $dni, $codigo);
+
+        $stmt->execute();
+    }
 }

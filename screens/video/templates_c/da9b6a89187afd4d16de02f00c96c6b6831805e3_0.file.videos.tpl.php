@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-02-01 18:37:29
+/* Smarty version 3.1.33, created on 2019-02-05 15:00:38
   from 'C:\UwAmp\screens\video\templates\videos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5c5491e92d9505_89010173',
+  'unifunc' => 'content_5c59a516cd4210_91612138',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'da9b6a89187afd4d16de02f00c96c6b6831805e3' => 
     array (
       0 => 'C:\\UwAmp\\screens\\video\\templates\\videos.tpl',
-      1 => 1549043514,
+      1 => 1549378837,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5c5491e92d9505_89010173 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c59a516cd4210_91612138 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="es-ES">
 
@@ -47,8 +47,8 @@ function content_5c5491e92d9505_89010173 (Smarty_Internal_Template $_smarty_tpl)
 
     <main>        
         <button id="showCat" class="btn_icon">Mostrar por categoría</button>
-        <div class="general">
-            <h2>General</h2>
+        <div class="GENERAL category">
+            <h2>GENERAL</h2>
             <section class="movies">            
                 <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['videos']->value, 'video');
@@ -62,13 +62,22 @@ foreach ($_from as $_smarty_tpl->tpl_vars['video']->value) {
 " alt="<?php echo $_smarty_tpl->tpl_vars['video']->value['titulo'];?>
 " data-id="<?php echo $_smarty_tpl->tpl_vars['video']->value['codigo'];?>
 ">
-                        </figure>                        
+                        </figure>
+                        <div class="movieInfo"> 
+                            <?php if ($_smarty_tpl->tpl_vars['video']->value['viewCount']) {?>
+                                <div class="views">
+                                    <i class="mdi mdi-eye-check-outline"></i>
+                                </div>                                                                
+                            <?php }?> 
+                            <button data-id="<?php echo $_smarty_tpl->tpl_vars['video']->value['codigo'];?>
+">Ver</button>                     
+                        </div>                        
                     </article>
                 <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-            </section>  
+            </section>
         </div>         
     </main>
 

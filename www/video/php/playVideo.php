@@ -16,10 +16,12 @@
 
     $ruta = getVideoPath($token);
     
+    saveUserView($token);
     $stream = new VideoStream($ruta);
     $stream->start();
 
-
+    
+    
     function getDesencryptedToken()
     {
         $token = isset($_GET['v']) ?
@@ -73,4 +75,13 @@
         $fileName = $video['video'];
 
         return secureFolder.'movies/'.$fileName;
+    }
+
+    function saveUserView($token) {
+        $DB = new VideoDB();
+
+        $user = Session::getValue('dni');
+        $codigo = $token->cod;
+
+        $DB->saveUserView($user, $codigo);
     }

@@ -20,9 +20,8 @@ function downloadFile(ev) {
     const url = "./php/downloadVideo.php";
 
     // const xhr = new XMLHttpRequest();
-    // xhr.withCredentials = true;
-
-    // xhr.open('POST', url);
+    // xhr.withCredentials = true;    
+    // xhr.responseType = 'blob';
 
     // xhr.addEventListener('progress', (ev) => {
     //     console.log(ev);
@@ -31,6 +30,8 @@ function downloadFile(ev) {
     // xhr.addEventListener('load', (ev) => {
     //     console.log(ev);
     // });
+
+    // xhr.open('POST', url);
 
     // xhr.send(data);
 

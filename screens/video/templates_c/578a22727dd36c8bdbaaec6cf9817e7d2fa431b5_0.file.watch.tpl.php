@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-02-04 08:27:32
+/* Smarty version 3.1.33, created on 2019-02-05 15:18:11
   from 'C:\UwAmp\screens\video\templates\watch.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5c57f7742948c9_38750818',
+  'unifunc' => 'content_5c59a933d64426_91211495',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '578a22727dd36c8bdbaaec6cf9817e7d2fa431b5' => 
     array (
       0 => 'C:\\UwAmp\\screens\\video\\templates\\watch.tpl',
-      1 => 1549268846,
+      1 => 1549379888,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_5c57f7742948c9_38750818 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c59a933d64426_91211495 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="es-ES">
 
@@ -49,7 +49,8 @@ function content_5c57f7742948c9_38750818 (Smarty_Internal_Template $_smarty_tpl)
 </h2>
         <div class="videoWrapper">
             <video src="<?php echo $_smarty_tpl->tpl_vars['urlVideo']->value;?>
-" class="videoPlayer" type="video/mp4" controls="controls" controlsList="nodownload nofullscreen" oncontextmenu="return false;"></video>
+" class="videoPlayer" poster="./img/<?php echo $_smarty_tpl->tpl_vars['video']->value['cartel'];?>
+" type="video/mp4" preload="none" controls="controls" controlsList="nodownload" oncontextmenu="return false;"></video>
         </div>
         
         <section class="description">            

@@ -37,18 +37,25 @@
 
         return $DB->getVideoInfo($codigo);
     }
-
-    //TODO: ZipArchive
+    
     function sendFile($video)
-    {
-        $name = $video['titulo'].'.mp4';
-        $type = 'application/mp4';
-        
+    {        
+        $name = $video['titulo'].'.mp4';             
         $videoPath = secureFolder.'movies/'.$video['video'];
 
-        header("Content-Disposition: attachment; filename=$name");
-        header("Content-Type: $type");    
+        //Borramos el archivo anterior
+        $zipPath = secureFolder.'movies/video.zip';       
+        unlink($zipPath);
+
+        $zip = new ZipArchive();
+        $zip->open($zipPath, ZIPARCHIVE::CREATE);
+
+        $zip->addFile($videoPath, $name);
+        $zip->close();        
+
+        header("Content-Disposition: attachment; filename=video.zip");
+        header("Content-Type: application/zip");    
     
         ob_clean();
-        readfile($videoPath);
+        readfile($zipPath);
     }

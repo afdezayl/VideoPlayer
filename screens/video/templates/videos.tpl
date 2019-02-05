@@ -19,17 +19,25 @@
 
     <main>        
         <button id="showCat" class="btn_icon">Mostrar por categoría</button>
-        <div class="general">
-            <h2>General</h2>
+        <div class="GENERAL category">
+            <h2>GENERAL</h2>
             <section class="movies">            
                 {foreach $videos as $video}
                     <article class="movie" data-categories="{$video.category}">                    
                         <figure>
                             <img src="./img/{$video.cartel}" alt="{$video.titulo}" data-id="{$video.codigo}">
-                        </figure>                        
+                        </figure>
+                        <div class="movieInfo"> 
+                            {if $video.viewCount}
+                                <div class="views">
+                                    <i class="mdi mdi-eye-check-outline"></i>
+                                </div>                                                                
+                            {/if} 
+                            <button data-id="{$video.codigo}">Ver</button>                     
+                        </div>                        
                     </article>
                 {/foreach}
-            </section>  
+            </section>
         </div>         
     </main>
 
