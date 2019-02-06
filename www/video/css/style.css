@@ -13,39 +13,6 @@
 /*-------------------------------
     ICONOS
 --------------------------------*/
-.icon {
-    /* line-height: 48px; */
-    font-size: 36px;
-    line-height: 36px;
-    height: 48px;
-    width: 48px;
-    
-    margin: auto;
-    padding: 6px 0;  
-    cursor: pointer;
-}
-
-.btn_icon {    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 4px;      
-    text-decoration: none;
-    color: var(--primaryTextColor);
-    background: var(--accentColor);
-
-    box-shadow: 1px  0 3px var(--primaryTextColor), 
-            -1px 0  var(--primaryColorLight),
-            0 1px 3px var(--primaryTextColor),
-            0 -1px var(--primaryColorLight); 
-}
-
-.btn_icon:active,
-.btn_icon:hover {
-    background: var(--accentColorLight);
-}
-
 
 /*----------------------------------
     ESTILOS
@@ -57,7 +24,9 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1rem;
 }
-
+html {
+    min-height: 100%;
+}
 .error {
     padding: 1rem;
     color: red;
@@ -65,16 +34,19 @@
 
 body {
     min-width: 250px;
+    min-height: 100vh;
     width: 100%;
     max-width: 1920px;
     margin: auto;
 
+    position: relative;
     background: rgba(0,0,0,0.8);
+    
 }
 
 header {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem;
     background: var(--primaryColor);
@@ -84,22 +56,69 @@ header {
     min-height: 5rem;
 }
 
+main {
+    padding-bottom: 2rem;
+    min-height: 80vh;
+}
+
 header h1 a{
     font-size: 2rem;
     color: var(--primaryColorText);
     text-decoration: none;
 }
 
-main {
-    min-height: 90vh;
-    
+.mdi-light.btn {
+    opacity: 0.8;
+}
+
+.mdi-light.btn:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+#user_menu {     
+    cursor: pointer;    
+    position: absolute;
+    right: 0;
+    z-index: 5;
+    background: #212121;
+}
+
+.hidden {
+    display: none;
+}
+
+#user_menu li {
+    list-style: none;
+    text-align: left;    
+    border-bottom: 1px solid gray;
+    padding: 0.5rem;
+}
+
+#user_menu li:hover {
+    background: #757575;
+}
+
+
+#user_menu li a {
+    text-decoration: none;
+    color: white;
+    line-height: 24px;
+    font-size: 18px;  
+}
+
+.btn:hover {
+    border: 1px solid var(--dividerColor);
+    border-radius: 2px;
 }
 
 footer {
+    position: relative;
+    bottom: 0;    
     width: 100%;
+    padding: 1rem;    
     color: var(--primaryColorText);
-    background: var(--primaryColor);
-    border-bottom: 1rem solid var(--darkPrimaryColor);
+    background: var(--primaryColor);    
 }
 /*-------------------------------------------- 
     PELÍCULAS
@@ -140,6 +159,10 @@ main .movies {
     cursor: pointer;
 }
 
+.movie:hover {
+    transform: scale(1.05, 1.05);
+    z-index: 5;
+}
 .movie:hover .movieInfo {
     display: block;
 }
@@ -160,7 +183,7 @@ main .movies {
 .views {
     position: absolute;
     bottom: 0.5rem;
-    left: 0.5rem;
+    left: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -178,8 +201,8 @@ main .movies {
     top: 0; left: 0; bottom: 0; right: 0;
 
     height: 2rem;
-    width:2rem;
-        
+    width:5rem;
+
     cursor: pointer;
 }
 /*-----------------------------------------------
@@ -188,24 +211,38 @@ main .movies {
 .description {
     margin: 1rem 10%;
     width: 80%;
-    min-height: 35vh;
-    border: 1px solid var(--primaryTextColor);    
+    position: relative;
+    border: 1px solid var(--primaryTextColor);  
+    min-height: 30vh;  
 }
 
 .description img {
     float: left;
     max-height: 25vh;
-    margin: 1vh;
+    margin: 1rem;
 }
 
 .description h2 {
-    padding: 1vh;
+    color: #FFFFFF;
+    padding-top: 1rem;
+}
+
+.description span{
+    color: rgba(255,255,255);    
+    font-size: 24px;
+    padding: 6px; 
+    cursor: pointer;   
 }
 
 .description p {
     padding: 1rem;
     text-align: justify;
+    color: rgba(255,255,255,0.8);
 }
+
+/* .description button {
+    float: right;
+} */
 
 .description div {
     text-align: center;

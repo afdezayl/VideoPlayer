@@ -6,20 +6,18 @@
     require secureFolder."VideoStream.class.php";
     require secureFolder.'Cripto.class.php';
 
-    $token = getDesencryptedToken();
-    $isValidSession = checkSession($token);
-
-    if ($isValidSession == false) {
+    Session::start();
+    if (Session::isValidSession() == false) {
         echo json_encode(["Error" => "Usuario no autorizado"]);
         exit;
     }
 
+    $token = getDesencryptedToken();
     $ruta = getVideoPath($token);
     
     saveUserView($token);
     $stream = new VideoStream($ruta);
     $stream->start();
-
     
     
     function getDesencryptedToken()
@@ -33,31 +31,11 @@
             exit;
         }
         
-        $desencryptedToken = Cripto::decrypt($token);
-
+        $key = Session::getValue('key');
+        $desencryptedToken = Cripto::decrypt($token, $key);
+        
         return json_decode($desencryptedToken);
-    }
-
-    function checkSession($token)
-    {
-        Session::start();
-        if (Session::isValidSession() == false) {
-            return false;
-        }
-
-        if ($token->id != session_id()) {
-            return false;
-        }
-
-        $rand = $token->rand;
-        $sess_rand = Session::getValue('rand');
-
-        if (is_null($sess_rand) || ($rand != $sess_rand)) {
-            return false;
-        }
-
-        return true;
-    }
+    }   
 
     function getVideoPath($token)
     {

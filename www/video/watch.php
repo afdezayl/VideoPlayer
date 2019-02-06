@@ -27,9 +27,9 @@
             'video'=> $video,
             'urlVideo'=> $urlVideo
         ]);
-
-    //echo var_dump($video);
-    $screen->display('watch.tpl');         
+    
+    $screen->display('watch.tpl');
+    
 
     function getCodigo()
     {
@@ -61,20 +61,17 @@
         return $video;
     }
 
-    //TODO: Cambios en la clase cripto
     function makeUrlToken($codigo)
     {
-        $rand = bin2hex(openssl_random_pseudo_bytes(20));
-
         $info = [
             'id'=>session_id(),
-            'cod'=>$codigo,
-            'rand'=>$rand
+            'cod'=>$codigo
         ];
     
-        Session::setValues(['rand'=>$rand]);
+        $key = Cripto::getRandomIV();
+        Session::setValues(['key'=>$key]);
     
-        $token = Cripto::encrypt(json_encode($info));
+        $token = Cripto::encrypt(json_encode($info), $key);
     
         $urlToken = urlencode($token);
         $urlVideo = "/php/playVideo.php?v=$urlToken";

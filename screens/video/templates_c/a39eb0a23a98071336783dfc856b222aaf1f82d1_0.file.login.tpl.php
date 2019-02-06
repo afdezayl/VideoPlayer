@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-02-04 08:01:10
+/* Smarty version 3.1.33, created on 2019-02-05 22:57:46
   from 'C:\UwAmp\screens\video\templates\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5c57f1466caf67_28038249',
+  'unifunc' => 'content_5c5a14ea047fa6_38527165',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a39eb0a23a98071336783dfc856b222aaf1f82d1' => 
     array (
       0 => 'C:\\UwAmp\\screens\\video\\templates\\login.tpl',
-      1 => 1549267267,
+      1 => 1549407462,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5c57f1466caf67_28038249 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c5a14ea047fa6_38527165 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="es-ES">
 
@@ -31,13 +31,14 @@ function content_5c57f1466caf67_28038249 (Smarty_Internal_Template $_smarty_tpl)
     
     <title>Login</title>
     
+    <link rel="stylesheet" href="./css/materialdesignicons.min.css">
     <link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body>
     <header>
         <h1>
-            <a href="videos.php">PHPFlix</a>
+            <a class="mdi mdi-light mdi-video-vintage" href="videos.php">PHPFlix</a>
         </h1>
     </header>
 

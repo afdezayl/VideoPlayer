@@ -57,7 +57,8 @@ function showSection(cat) {
         .querySelectorAll('.movie')
         .forEach(m => m.addEventListener('click', goToVideo));
 
-    btnCategory.innerText = 'Mostrar general';
+    btnCategory.innerText = 'General';
+    btnCategory.className = 'mdi mdi-24px mdi-filter-remove-outline';
     btnCategory.onclick = showAll;
 }
 
@@ -82,6 +83,7 @@ function showAll() {
         .querySelector('.GENERAL')
         .style.display = 'block';
 
-    btnCategory.innerText = 'Mostrar por categoría';
+    btnCategory.innerText = 'Categorías';
+    btnCategory.className = 'mdi mdi-24px mdi-filter-outline';
     btnCategory.onclick = showByCategory;
 }

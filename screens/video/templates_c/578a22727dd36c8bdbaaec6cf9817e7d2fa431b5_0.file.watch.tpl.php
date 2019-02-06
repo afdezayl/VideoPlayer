@@ -1,27 +1,28 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-02-05 15:18:11
+/* Smarty version 3.1.33, created on 2019-02-06 10:54:58
   from 'C:\UwAmp\screens\video\templates\watch.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5c59a933d64426_91211495',
+  'unifunc' => 'content_5c5abd02b8db96_86230655',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '578a22727dd36c8bdbaaec6cf9817e7d2fa431b5' => 
     array (
       0 => 'C:\\UwAmp\\screens\\video\\templates\\watch.tpl',
-      1 => 1549379888,
+      1 => 1549450497,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:header.tpl' => 1,
+    'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5c59a933d64426_91211495 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c5abd02b8db96_86230655 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="es-ES">
 
@@ -37,16 +38,17 @@ function content_5c59a933d64426_91211495 (Smarty_Internal_Template $_smarty_tpl)
     
     <?php echo '<script'; ?>
  src="./js/watch.js" defer><?php echo '</script'; ?>
->    
+> 
+    <?php echo '<script'; ?>
+ src="./js/menu.js" defer><?php echo '</script'; ?>
+>   
 </head>
 
 <body>    
     <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-    <main>
-        <h2><?php echo $_smarty_tpl->tpl_vars['video']->value['titulo'];?>
-</h2>
+    <main>        
         <div class="videoWrapper">
             <video src="<?php echo $_smarty_tpl->tpl_vars['urlVideo']->value;?>
 " class="videoPlayer" poster="./img/<?php echo $_smarty_tpl->tpl_vars['video']->value['cartel'];?>
@@ -56,19 +58,20 @@ function content_5c59a933d64426_91211495 (Smarty_Internal_Template $_smarty_tpl)
         <section class="description">            
             <img src="./img/<?php echo $_smarty_tpl->tpl_vars['video']->value['cartel'];?>
 " alt="Cartel <?php echo $_smarty_tpl->tpl_vars['video']->value['titulo'];?>
-">            
+">
+            <h2><?php echo $_smarty_tpl->tpl_vars['video']->value['titulo'];?>
+</h2>
+            <?php if ($_smarty_tpl->tpl_vars['video']->value['descargable'] == 'S') {?>
+                <span id="download" class="mdi mdi-36px mdi-light mdi-download btn" data-codigo="<?php echo $_smarty_tpl->tpl_vars['video']->value['codigo'];?>
+">Descargar</span>
+            <?php }?>           
             <p><?php echo $_smarty_tpl->tpl_vars['video']->value['sinopsis'];?>
-</p>
-            <div>
-                <?php if ($_smarty_tpl->tpl_vars['video']->value['descargable'] == 'S') {?>
-                    <button id="download" class="mdi mdi-download icon" data-codigo="<?php echo $_smarty_tpl->tpl_vars['video']->value['codigo'];?>
-"></button>
-                <?php }?>                
-            </div>      
+</p>                  
         </section>        
     </main>   
 
-    <footer>aaaaaaaaa</footer>
+    <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </body>
 
 </html>

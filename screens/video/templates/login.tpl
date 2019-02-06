@@ -8,13 +8,14 @@
     
     <title>Login</title>
     
+    <link rel="stylesheet" href="./css/materialdesignicons.min.css">
     <link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body>
     <header>
         <h1>
-            <a href="videos.php">PHPFlix</a>
+            <a class="mdi mdi-light mdi-video-vintage" href="videos.php">PHPFlix</a>
         </h1>
     </header>
 

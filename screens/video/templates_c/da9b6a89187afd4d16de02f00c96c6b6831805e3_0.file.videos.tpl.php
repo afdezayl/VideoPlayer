@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-02-05 15:00:38
+/* Smarty version 3.1.33, created on 2019-02-06 07:46:19
   from 'C:\UwAmp\screens\video\templates\videos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5c59a516cd4210_91612138',
+  'unifunc' => 'content_5c5a90cb4ccc73_52502920',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'da9b6a89187afd4d16de02f00c96c6b6831805e3' => 
     array (
       0 => 'C:\\UwAmp\\screens\\video\\templates\\videos.tpl',
-      1 => 1549378837,
+      1 => 1549439177,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5c59a516cd4210_91612138 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c5a90cb4ccc73_52502920 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="es-ES">
 
@@ -33,11 +33,14 @@ function content_5c59a516cd4210_91612138 (Smarty_Internal_Template $_smarty_tpl)
     
     <title>Plataforma de streaming</title>
     
-    <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="./css/style.css" />    
     
     <?php echo '<script'; ?>
  src="./js/videos.js" defer><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="./js/menu.js" defer><?php echo '</script'; ?>
 >
 </head>
 
@@ -46,7 +49,7 @@ function content_5c59a516cd4210_91612138 (Smarty_Internal_Template $_smarty_tpl)
 ?>
 
     <main>        
-        <button id="showCat" class="btn_icon">Mostrar por categoría</button>
+        <button id="showCat" class="mdi mdi-24px mdi-filter-outline">Categorías</button>
         <div class="GENERAL category">
             <h2>GENERAL</h2>
             <section class="movies">            
@@ -66,10 +69,10 @@ foreach ($_from as $_smarty_tpl->tpl_vars['video']->value) {
                         <div class="movieInfo"> 
                             <?php if ($_smarty_tpl->tpl_vars['video']->value['viewCount']) {?>
                                 <div class="views">
-                                    <i class="mdi mdi-eye-check-outline"></i>
+                                    <i class="mdi mdi-24px mdi-eye-check-outline"></i>
                                 </div>                                                                
                             <?php }?> 
-                            <button data-id="<?php echo $_smarty_tpl->tpl_vars['video']->value['codigo'];?>
+                            <button class="mdi mdi-play-circle-outline" data-id="<?php echo $_smarty_tpl->tpl_vars['video']->value['codigo'];?>
 ">Ver</button>                     
                         </div>                        
                     </article>
