@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-02-06 10:54:58
+/* Smarty version 3.1.33, created on 2019-02-06 18:14:18
   from 'C:\UwAmp\screens\video\templates\watch.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5c5abd02b8db96_86230655',
+  'unifunc' => 'content_5c5b23fa490338_75539995',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '578a22727dd36c8bdbaaec6cf9817e7d2fa431b5' => 
     array (
       0 => 'C:\\UwAmp\\screens\\video\\templates\\watch.tpl',
-      1 => 1549450497,
+      1 => 1549476839,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5c5abd02b8db96_86230655 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c5b23fa490338_75539995 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="es-ES">
 
@@ -31,10 +31,10 @@ function content_5c5abd02b8db96_86230655 (Smarty_Internal_Template $_smarty_tpl)
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="video, streaming" />
     
-    <title>Plataforma de streaming</title>
+    <title>PHPFlix</title>
     
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="./css/style.css" defer/>
+    <link rel="stylesheet" href="./css/materialdesignicons.min.css" defer>
     
     <?php echo '<script'; ?>
  src="./js/watch.js" defer><?php echo '</script'; ?>
@@ -61,10 +61,23 @@ function content_5c5abd02b8db96_86230655 (Smarty_Internal_Template $_smarty_tpl)
 ">
             <h2><?php echo $_smarty_tpl->tpl_vars['video']->value['titulo'];?>
 </h2>
+            <p>Categorías: 
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['video']->value['categories'], 'category');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['category']->value) {
+?>
+                    <em><?php echo $_smarty_tpl->tpl_vars['category']->value;?>
+</em>
+                <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+            </p>
             <?php if ($_smarty_tpl->tpl_vars['video']->value['descargable'] == 'S') {?>
                 <span id="download" class="mdi mdi-36px mdi-light mdi-download btn" data-codigo="<?php echo $_smarty_tpl->tpl_vars['video']->value['codigo'];?>
 ">Descargar</span>
-            <?php }?>           
+            <?php }?>                       
             <p><?php echo $_smarty_tpl->tpl_vars['video']->value['sinopsis'];?>
 </p>                  
         </section>        

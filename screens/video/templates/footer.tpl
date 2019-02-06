@@ -1,5 +1,11 @@
 <footer>
     <div>
+        <p class="mdi mdi-light mdi-video-vintage">
+            PHPFlix<i class="mdi mdi-18px mdi-light mdi-copyright">2019</i>        
+        </p>
+        
+    </div>
+    <div>
         <ul>
             <li>
                 <a>Contacta con nosotros</a>
@@ -14,13 +20,9 @@
     </div>
 
     <div>
-        <i class="mdi mdi-36px mdi-light mdi-facebook btn"></i>
-        <i class="mdi mdi-36px mdi-light mdi-twitter btn"></i>
-        <i class="mdi mdi-36px mdi-light mdi-instagram btn"></i>
-        <i class="mdi mdi-36px mdi-light mdi-youtube btn"></i>
-    </div>
-
-    <div>
-
-    </div>
+        <i class="mdi mdi-36px mdi-light mdi-facebook icon"></i>
+        <i class="mdi mdi-36px mdi-light mdi-twitter icon"></i>
+        <i class="mdi mdi-36px mdi-light mdi-instagram icon"></i>
+        <i class="mdi mdi-36px mdi-light mdi-youtube icon"></i>
+    </div>    
 </footer>

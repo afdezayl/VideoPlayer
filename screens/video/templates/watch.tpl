@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="video, streaming" />
     
-    <title>Plataforma de streaming</title>
+    <title>PHPFlix</title>
     
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="./css/style.css" defer/>
+    <link rel="stylesheet" href="./css/materialdesignicons.min.css" defer>
     
     <script src="./js/watch.js" defer></script> 
     <script src="./js/menu.js" defer></script>   
@@ -26,9 +26,14 @@
         <section class="description">            
             <img src="./img/{$video.cartel}" alt="Cartel {$video.titulo}">
             <h2>{$video.titulo}</h2>
+            <p>Categorías: 
+                {foreach $video.categories as $category}
+                    <em>{$category}</em>
+                {/foreach}
+            </p>
             {if $video.descargable == 'S'}
                 <span id="download" class="mdi mdi-36px mdi-light mdi-download btn" data-codigo="{$video.codigo}">Descargar</span>
-            {/if}           
+            {/if}                       
             <p>{$video.sinopsis}</p>                  
         </section>        
     </main>   

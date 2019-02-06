@@ -13,6 +13,9 @@ document
     .querySelectorAll('.movieInfo button')
     .forEach(m => m.addEventListener('click', goToVideo));
 
+const inputTitulo = document.getElementById('title');
+inputTitulo.addEventListener('input', filterVideos);
+
 function goToVideo(ev) {
     const id = ev.target.getAttribute('data-id');
     
@@ -58,7 +61,7 @@ function showSection(cat) {
         .forEach(m => m.addEventListener('click', goToVideo));
 
     btnCategory.innerText = 'General';
-    btnCategory.className = 'mdi mdi-24px mdi-filter-remove-outline';
+    btnCategory.className = 'mdi mdi-24px mdi-light mdi-filter-remove-outline btn';
     btnCategory.onclick = showAll;
 }
 
@@ -84,6 +87,24 @@ function showAll() {
         .style.display = 'block';
 
     btnCategory.innerText = 'Categorías';
-    btnCategory.className = 'mdi mdi-24px mdi-filter-outline';
+    btnCategory.className = 'mdi mdi-24px mdi-light mdi-filter-outline btn';
     btnCategory.onclick = showByCategory;
+}
+
+function filterVideos(ev) {
+    const text = this.value.toUpperCase();
+    const moviesBox = [...document.querySelectorAll('.movie')];
+    moviesBox.forEach(movie => movie.classList.remove('hidden'));
+
+    if(!text.length) {
+        return;
+    }    
+
+    moviesBox   
+        .filter(movie => {
+            const titulo = movie.getAttribute('data-title');
+            return !titulo.includes(text, 0);
+        })
+        .forEach(movie => movie.classList.add('hidden'));
+
 }

@@ -76,5 +76,8 @@
         $urlToken = urlencode($token);
         $urlVideo = "/php/playVideo.php?v=$urlToken";
 
-        return dirname($_SERVER['HTTP_REFERER']).$urlVideo;
+        /*Ruta completa con:
+            dirname($_SERVER['HTTP_REFERER']) */
+            
+        return '.'.$urlVideo;
     }

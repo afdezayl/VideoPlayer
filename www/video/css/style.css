@@ -1,6 +1,8 @@
-:root {    
-    --darkPrimaryColor: #000;/* #303F9F; */
-    --primaryColor: #212121;/* #3F51B5; */
+:root {
+    --darkPrimaryColor: #000;
+    /* #303F9F; */
+    --primaryColor: #212121;
+    /* #3F51B5; */
     --primaryColorLight: #C5CAE9;
     --primaryColorText: #FFFFFF;
     --accentColor: #FF9800;
@@ -24,9 +26,11 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1rem;
 }
+
 html {
     min-height: 100%;
 }
+
 .error {
     padding: 1rem;
     color: red;
@@ -39,9 +43,10 @@ body {
     max-width: 1920px;
     margin: auto;
 
-    position: relative;
-    background: rgba(0,0,0,0.8);
-    
+    display: flex;
+    flex-direction: column;
+
+    background: rgba(0, 0, 0, 0.8);
 }
 
 header {
@@ -50,18 +55,47 @@ header {
     align-items: center;
     padding: 1rem;
     background: var(--primaryColor);
-    
+
     color: var(--primaryColorText);
     text-align: center;
-    min-height: 5rem;
+    min-height: 10vh;
+    position: relative;
+}
+
+header .btn {
+    margin-right: 2rem;
+}
+
+nav {
+    padding: 0 1rem;
+    color: #FFFFFF;
+    text-align: center;
+    border-bottom: 2px solid var(--dividerColor);
+}
+
+nav * {
+    margin: 1rem;
+    font-size: 1.25rem;
+}
+
+nav input {
+    padding: 0 1rem;
+}
+
+nav button {
+    color: #FFFFFF;
+    background: none;
+    border: none;
+    margin: 1rem 3rem;
+    min-width: 8rem;
 }
 
 main {
     padding-bottom: 2rem;
-    min-height: 80vh;
+    flex: 1;
 }
 
-header h1 a{
+header h1 a {
     font-size: 2rem;
     color: var(--primaryColorText);
     text-decoration: none;
@@ -76,11 +110,12 @@ header h1 a{
     opacity: 1;
 }
 
-#user_menu {     
-    cursor: pointer;    
+#user_menu {
+    cursor: pointer;
     position: absolute;
     right: 0;
-    z-index: 5;
+    top: 10vh;
+    z-index: 10;
     background: #212121;
 }
 
@@ -90,9 +125,9 @@ header h1 a{
 
 #user_menu li {
     list-style: none;
-    text-align: left;    
+    text-align: left;
     border-bottom: 1px solid gray;
-    padding: 0.5rem;
+    padding: 1rem 4rem 1rem 1rem;
 }
 
 #user_menu li:hover {
@@ -104,58 +139,97 @@ header h1 a{
     text-decoration: none;
     color: white;
     line-height: 24px;
-    font-size: 18px;  
+    font-size: 18px;
 }
 
+.btn {
+    border: 1px solid var(--dividerColor);
+    border-radius: 2px;
+}
 .btn:hover {
     border: 1px solid var(--dividerColor);
     border-radius: 2px;
 }
 
 footer {
-    position: relative;
-    bottom: 0;    
     width: 100%;
-    padding: 1rem;    
+    padding: 1rem;
     color: var(--primaryColorText);
-    background: var(--primaryColor);    
+    background: var(--primaryColor);
+
+    display: flex;    
 }
+
+footer div {
+    flex: 1 1;
+    align-self: center;
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+footer div ul {
+    list-style: none;
+}
+
+footer div ul li {    
+    padding: 0.25rem;
+}
+
+footer div ul li a {
+    cursor: pointer;
+}
+
+.icon {
+    opacity: 0.8;
+    font-size: 30px;
+    padding: 6px; 
+    cursor: pointer;   
+}
+
+.icon:hover{
+    opacity: 1;
+    border: 1px solid var(--dividerColor);
+    border-radius: 2px;
+    transform: scale(1.2);
+}
+
 /*-------------------------------------------- 
     PELÍCULAS
 --------------------------------------------*/
-main div h2{
+main div h2 {
     margin: 1rem;
     /* border-top: 5px solid var(--darkPrimaryColor); */
 
     color: var(--primaryColorText);
     /* background: var(--primaryColor); */
 }
+
 main .movies {
     padding: 0 2rem;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    align-items: center;    
+    align-items: center;
 }
 
 .movie {
-    width: 100%;    
+    width: 100%;
     position: relative;
 }
 
 .movie figure {
     height: 40vh;
     margin: auto;
-    width: 100%;    
+    width: 100%;
     /* background-color: var(--secondaryTextColor); */
 }
 
 .movie img {
     width: 100%;
-    
+
     height: inherit;
     object-fit: cover;
     object-position: center;
-    
+
     cursor: pointer;
 }
 
@@ -163,6 +237,7 @@ main .movies {
     transform: scale(1.05, 1.05);
     z-index: 5;
 }
+
 .movie:hover .movieInfo {
     display: block;
 }
@@ -175,8 +250,8 @@ main .movies {
 
     width: inherit;
     height: 100%;
-        
-    background: rgba(0,0,0,0.8);
+
+    background: rgba(0, 0, 0, 0.8);
     text-align: center;
 }
 
@@ -192,19 +267,23 @@ main .movies {
     height: 3rem;
     width: 3rem;
 
-    background-color: var(--accentColor);
+    background-color: #212121;
 }
 
 .movieInfo button {
     margin: auto;
-    position: absolute;    
-    top: 0; left: 0; bottom: 0; right: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 
     height: 2rem;
-    width:5rem;
+    width: 5rem;
 
     cursor: pointer;
 }
+
 /*-----------------------------------------------
     DESCRIPCIÓN PELÍCULA
 --------------------------------------------------*/
@@ -212,8 +291,8 @@ main .movies {
     margin: 1rem 10%;
     width: 80%;
     position: relative;
-    border: 1px solid var(--primaryTextColor);  
-    min-height: 30vh;  
+    border: 1px solid var(--primaryTextColor);
+    min-height: 30vh;
 }
 
 .description img {
@@ -224,20 +303,28 @@ main .movies {
 
 .description h2 {
     color: #FFFFFF;
-    padding-top: 1rem;
+    padding: 1rem 0 0 1rem;
+    font-size: 2rem;
 }
 
-.description span{
-    color: rgba(255,255,255);    
+.description span {
+    color: rgba(255, 255, 255);
+    margin-left: 1rem;
     font-size: 24px;
-    padding: 6px; 
-    cursor: pointer;   
+    padding: 6px;
+    cursor: pointer;
+}
+
+.description em {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 6px;
 }
 
 .description p {
     padding: 1rem;
     text-align: justify;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 /* .description button {
@@ -252,24 +339,25 @@ main .movies {
     VIDEO PLAYER
 --------------------------------------*/
 .videoWrapper {
-	position: relative;
-	padding-bottom: 45%; /* 16:9  56.25%*/
-	padding-top: 0px;
+    position: relative;
+    padding-bottom: 45%;
+    /* 16:9  56.25%*/
+
     height: 0;
     width: 80%;
-    margin: auto;
+    margin: 1rem auto;
 
     box-shadow: 3px 3px 5px #000;
     border-radius: 5px;
 }
 
 .videoPlayer {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    
+
     border-radius: 5px;
     background: #000;
 }
@@ -297,22 +385,22 @@ main .movies {
 }
 
 div label {
-    display: block;    
+    display: block;
     width: 100%;
     text-align: left;
-    color: var(--darkPrimaryColor);    
+    color: var(--darkPrimaryColor);
 }
 
-.btn_upload{
+.btn_upload {
     display: flex;
     align-items: center;
     justify-content: center;
 
     background: var(--darkPrimaryColor);
     color: var(--primaryColorText);
-    box-shadow: 1px  0  var(--primaryTextColor), 
-        -1px 0  var(--primaryColorLight),
-        0 1px  var(--primaryTextColor),
+    box-shadow: 1px 0 var(--primaryTextColor),
+        -1px 0 var(--primaryColorLight),
+        0 1px var(--primaryTextColor),
         0 -1px var(--primaryColorLight);
 
     border-radius: 4px;
@@ -373,29 +461,29 @@ div input:focus {
     position: fixed;
     z-index: 1;
     left: 0;
-    top:0;
+    top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal-content {    
-    background: var(--primaryColorText);    
-    margin: 25vh auto;    
+.modal-content {
+    background: var(--primaryColorText);
+    margin: 25vh auto;
     width: 40%;
-    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),
-                0 7px 20px 0 rgba(0,0,0,0.17);
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2),
+        0 7px 20px 0 rgba(0, 0, 0, 0.17);
     animation-name: modal_open;
     animation-duration: 1s;
 }
 
 .modal-header {
     padding: 1rem 1rem;
-    color: var(--primaryTextColor);    
+    color: var(--primaryTextColor);
     display: flex;
     justify-content: space-between;
-    align-items: center;    
+    align-items: center;
 }
 
 .modal-header h2 {
@@ -408,7 +496,7 @@ div input:focus {
     color: var(--primaryTextColor);
 }
 
-.modal-footer {    
+.modal-footer {
     display: flex;
     justify-content: flex-end;
     vertical-align: center;
@@ -416,8 +504,8 @@ div input:focus {
 }
 
 .close-btn {
-    color: #212121;    
-    font-size: 2rem;    
+    color: #212121;
+    font-size: 2rem;
 }
 
 .close-btn:hover,
@@ -442,17 +530,22 @@ div input:focus {
 }
 
 @keyframes modal_open {
-    from{opacity: 0}
-    to{opacity: 1}
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
 }
 
 /*------------------------------------------
     RESPONSIVE
 ------------------------------------------*/
 @media only screen and (max-width: 1200px) {
-       
-    main .movies {        
-        grid-template-columns: repeat(5, 1fr);        
+
+    main .movies {
+        grid-template-columns: repeat(5, 1fr);
     }
 }
 
@@ -460,15 +553,15 @@ div input:focus {
     .login {
         width: 80%;
     }
-    
-    main .movies {        
-        grid-template-columns: repeat(4, 1fr);        
+
+    main .movies {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
-@media only screen and (max-width: 780px) {    
-    main .movies {        
-        grid-template-columns: repeat(3, 1fr);        
+@media only screen and (max-width: 780px) {
+    main .movies {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -478,14 +571,14 @@ div input:focus {
         margin: 1rem auto;
     }
 
-    main .movies {        
-        grid-template-columns: repeat(3, 1fr); 
-        padding: 0 0;       
+    main .movies {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0 0;
     }
 
     .modal-content {
         width: 80%;
-    }    
+    }
 
     .login div {
         width: 80%;
@@ -498,8 +591,8 @@ div input:focus {
 }
 
 @media only screen and (max-width: 480px) {
-       
-    main .movies {        
-        grid-template-columns: repeat(2, 1fr);        
+
+    main .movies {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

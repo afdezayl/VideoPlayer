@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="video, streaming" />
     
-    <title>Login</title>
+    <title>PHPFlix</title>
     
-    <link rel="stylesheet" href="./css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/materialdesignicons.min.css" defer>
+    <link rel="stylesheet" href="./css/style.css" defer/>
 </head>
 
 <body>
