@@ -14,7 +14,9 @@
     $codigo = getCodigo();
     $video = getVideo($user, $codigo);
 
-    sendFile($video);
+    if($video['descargable']=='S') {
+        sendFile($video);
+    }    
     exit;
 
     function getCodigo()

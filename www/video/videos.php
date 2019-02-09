@@ -28,8 +28,6 @@
         $video['category'] = $strCategories;
         $video['viewCount'] = $viewCount;
     }
-
-    //echo var_dump($videos);
     
     $screen = new VideoSmarty(smartyScreens);    
     $screen->assign('videos', $videos);

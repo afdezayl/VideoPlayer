@@ -21,7 +21,7 @@
     <nav>        
         <label for="title">Filtrar:</label>
         <input type="text" name="title" id="title" placeholder="Buscar por título">
-        <button id="showCat" class="mdi mdi-24px mdi-light mdi-filter-outline btn">Categorías</button>
+        <button id="showCat" class="mdi mdi-24px mdi-light mdi-filter-outline">Categorías</button>
     </nav>
 
     <main>        
@@ -33,13 +33,13 @@
                         <figure>
                             <img src="./img/{$video.cartel}" alt="{$video.titulo}" data-id="{$video.codigo}">
                         </figure>
-                        <div class="movieInfo"> 
-                            {if $video.viewCount}
-                                <div class="views">
-                                    <i class="mdi mdi-24px mdi-light mdi-eye-check-outline"></i>
-                                </div>                                                                
-                            {/if} 
-                            <button class="mdi mdi-play-circle-outline btn" data-id="{$video.codigo}">Ver</button>                     
+                        {if $video.viewCount}
+                            <div class="views">
+                                <i class="mdi mdi-24px mdi-light mdi-eye-outline"></i>
+                            </div>
+                        {/if} 
+                        <div class="movieInfo">
+                            <button class="mdi mdi-24px mdi-play-circle-outline btn" data-id="{$video.codigo}">Ver</button>                     
                         </div>                        
                     </article>
                 {/foreach}

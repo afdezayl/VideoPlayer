@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-02-06 18:15:18
+/* Smarty version 3.1.33, created on 2019-02-07 07:36:12
   from 'C:\UwAmp\screens\video\templates\videos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5c5b24368b99a8_33798470',
+  'unifunc' => 'content_5c5bdfec677806_66802541',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'da9b6a89187afd4d16de02f00c96c6b6831805e3' => 
     array (
       0 => 'C:\\UwAmp\\screens\\video\\templates\\videos.tpl',
-      1 => 1549476828,
+      1 => 1549524971,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5c5b24368b99a8_33798470 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c5bdfec677806_66802541 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="es-ES">
 
@@ -51,7 +51,7 @@ function content_5c5b24368b99a8_33798470 (Smarty_Internal_Template $_smarty_tpl)
     <nav>        
         <label for="title">Filtrar:</label>
         <input type="text" name="title" id="title" placeholder="Buscar por título">
-        <button id="showCat" class="mdi mdi-24px mdi-light mdi-filter-outline btn">Categorías</button>
+        <button id="showCat" class="mdi mdi-24px mdi-light mdi-filter-outline">Categorías</button>
     </nav>
 
     <main>        
@@ -72,13 +72,13 @@ foreach ($_from as $_smarty_tpl->tpl_vars['video']->value) {
 " data-id="<?php echo $_smarty_tpl->tpl_vars['video']->value['codigo'];?>
 ">
                         </figure>
-                        <div class="movieInfo"> 
-                            <?php if ($_smarty_tpl->tpl_vars['video']->value['viewCount']) {?>
-                                <div class="views">
-                                    <i class="mdi mdi-24px mdi-light mdi-eye-check-outline"></i>
-                                </div>                                                                
-                            <?php }?> 
-                            <button class="mdi mdi-play-circle-outline btn" data-id="<?php echo $_smarty_tpl->tpl_vars['video']->value['codigo'];?>
+                        <?php if ($_smarty_tpl->tpl_vars['video']->value['viewCount']) {?>
+                            <div class="views">
+                                <i class="mdi mdi-24px mdi-light mdi-eye-outline"></i>
+                            </div>
+                        <?php }?> 
+                        <div class="movieInfo">
+                            <button class="mdi mdi-24px mdi-play-circle-outline btn" data-id="<?php echo $_smarty_tpl->tpl_vars['video']->value['codigo'];?>
 ">Ver</button>                     
                         </div>                        
                     </article>

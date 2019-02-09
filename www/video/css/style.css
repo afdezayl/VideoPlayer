@@ -87,7 +87,16 @@ nav button {
     background: none;
     border: none;
     margin: 1rem 3rem;
-    min-width: 8rem;
+    min-width: 8rem;  
+
+    opacity: 0.8;
+    border: 1px solid var(--dividerColor);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+nav button:hover {
+    opacity: 1;
 }
 
 main {
@@ -267,7 +276,7 @@ main .movies {
     height: 3rem;
     width: 3rem;
 
-    background-color: #212121;
+    background-color: red;
 }
 
 .movieInfo button {
@@ -280,7 +289,8 @@ main .movies {
 
     height: 2rem;
     width: 5rem;
-
+    font-size: 1.5rem;
+    
     cursor: pointer;
 }
 
